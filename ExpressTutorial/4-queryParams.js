@@ -14,11 +14,11 @@ app.get('/api/products' , (req , res) => {
     res.json(newProducts)
 })
 
-app.get('/api/products/:ordekEkrem' , (req , res) => {
+app.get('/api/products/:param1' , (req , res) => {
     console.log( "Parametre 1 " + req.params)
-    const { ordekEkrem } = req.params
-    console.log("Parametre 2 " +   ordekEkrem)
-    const singleProduct = products.find(products => products.id === Number(ordekEkrem))
+    const { param1 } = req.params
+    console.log("Parametre 2 " +   param1)
+    const singleProduct = products.find(products => products.id === Number(param1))
 
     if(!singleProduct){
         res.status(404).json({ message: 'Product not found' })
